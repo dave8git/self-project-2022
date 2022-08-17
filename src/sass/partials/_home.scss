@@ -1,0 +1,22 @@
+/* Global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// #home {
+//   max-width: 100%;
+// }
+.container {
+  width: 100%;
+}
+
+.home-background {
+  background-color: black;
+  z-index: 4;
+}
+
+.main-nav {
+  width: 100%;
+}
