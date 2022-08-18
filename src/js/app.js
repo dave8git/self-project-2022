@@ -1,8 +1,7 @@
 import {settings, select, classNames} from './settings.js';
-import Product from './components/Product.js';
-import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
 import Home from './components/Home.js';
+import Order from './components/Order.js';
 
 const app = {
   initPages: function () {
@@ -39,11 +38,7 @@ const app = {
     }
   },
 
-  initHome() {
-    const thisApp = this;
-    //const homeSiteElem = document.querySelector(select.containerOf.home);
-    thisApp.home = new Home(thisApp.data.carousel);
-  },
+ 
 
   activePage: function(pageId) {
     const thisApp = this;
@@ -59,74 +54,31 @@ const app = {
       ); // w toggle możemy dodać 
     }
   },
-  initMenu: function () {
+  
+  initHome() {
     const thisApp = this;
-    for (let productData in thisApp.data.products) {
-      //new Product(productData, thisApp.data.products[productData]);
-      new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
-    } 
-    //console.log('thisApp.data:', thisApp.data);
-
+    //const homeSiteElem = document.querySelector(select.containerOf.home);
+    thisApp.home = new Home();
   },
-  initCart: function () {
+
+  initOrder() {
     const thisApp = this;
-
-    const cartElem = document.querySelector(select.containerOf.cart);
-    thisApp.cart = new Cart(cartElem);
-    thisApp.productList = document.querySelector(select.containerOf.menu);
-    thisApp.productList.addEventListener('add-to-cart', function(event){
-      // console.log(event);
-      app.cart.add(event.detail.product);
-    });
-    // console.log(thisApp.productList);
+    thisApp.order = new Order();
   },
+ 
   initBooking: function () {
     const thisApp = this; 
-    const bookingElem = document.querySelector(select.containerOf.booking);
-    thisApp.booking = new Booking(bookingElem);
+    //const bookingElem = document.querySelector(select.containerOf.booking);
+    thisApp.booking = new Booking();
   },
-  initData: function () {
-    const thisApp = this;
-    thisApp.data = {};
-    const url = settings.db.url + '/' + settings.db.products;
-    // console.log('url', url);
-    fetch(url)
-      .then(function (rawResponse) {
-        return rawResponse.json();
-      })
-      .then(function (parsedResponse) {
-        // console.log('parsedResponse', parsedResponse);
-        thisApp.data.products = parsedResponse; /* save parsedResponse as thisApp.data.products */
-
-        thisApp.initMenu(); /* execute initMenu method */
-      });
-
-    // console.log('thisApp.data', JSON.stringify(thisApp.data));
-
-    const urlCarousel = settings.db.url + '/' + settings.db.carousel;
-    fetch(urlCarousel)
-      .then(function (rawResponse) {
-        return rawResponse.json(); 
-      })
-      .then(function (parsedResponse) {
-        thisApp.data.carousel = parsedResponse;
-
-        thisApp.initHome();
-      });
-  },
+  
 
   init: function () {
     const thisApp = this;
-    // console.log('*** App starting ***');
-    // console.log('thisApp:', thisApp);
-    // console.log('classNames:', classNames);
-    // console.log('settings:', settings);
-    // console.log('templates:', templates);
-    thisApp.initData();
-    //thisApp.initMenu();  
-    //thisApp.initCart();
+    thisApp.initHome();
     thisApp.initPages();
     thisApp.initBooking(); 
+    thisApp.initOrder();
   },
 };
 
