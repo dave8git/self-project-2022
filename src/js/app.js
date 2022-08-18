@@ -1,7 +1,7 @@
-import {settings, select, classNames} from './settings.js';
-import Booking from './components/Booking.js';
+import {select, classNames} from './settings.js';
+import Discover from './components/Discover.js';
 import Home from './components/Home.js';
-import Order from './components/Order.js';
+import Search from './components/Search.js';
 
 const app = {
   initPages: function () {
@@ -61,15 +61,15 @@ const app = {
     thisApp.home = new Home();
   },
 
-  initOrder() {
+  initSearch() {
     const thisApp = this;
-    thisApp.order = new Order();
+    thisApp.search = new Search();
   },
  
-  initBooking: function () {
+  initDiscover: function () {
     const thisApp = this; 
     //const bookingElem = document.querySelector(select.containerOf.booking);
-    thisApp.booking = new Booking();
+    thisApp.discover = new Discover();
   },
   
 
@@ -77,8 +77,8 @@ const app = {
     const thisApp = this;
     thisApp.initHome();
     thisApp.initPages();
-    thisApp.initBooking(); 
-    thisApp.initOrder();
+    thisApp.initDiscover(); 
+    thisApp.initSearch();
   },
 };
 

@@ -1,14 +1,14 @@
 export const select = {
   templateOf: {
     homeSite: '#template-home',
-    orderSite: '#order-site',
-    bookingSite: '#template-booking',
+    searchSite: '#search-site',
+    discoverSite: '#template-discover',
   },
   containerOf: {
     home: '.home-wrapper',
     pages: '#pages',
-    booking: '.booking-wrapper',
-    order: '.order-wrapper',
+    discover: '.discover-wrapper',
+    search: '.search-wrapper',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -133,10 +133,10 @@ export const templates = {
   homeSite: Handlebars.compile(
     document.querySelector(select.templateOf.homeSite).innerHTML
   ),
-  orderSite: Handlebars.compile(
-    document.querySelector(select.templateOf.orderSite).innerHTML
+  searchSite: Handlebars.compile(
+    document.querySelector(select.templateOf.searchSite).innerHTML
   ),
-  bookingSite: Handlebars.compile(
-    document.querySelector(select.templateOf.bookingSite).innerHTML
+  discoverSite: Handlebars.compile(
+    document.querySelector(select.templateOf.discoverSite).innerHTML
   ),
 };
