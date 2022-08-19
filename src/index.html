@@ -1,72 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>self-project-2022</title>
-  <link rel="stylesheet" href="./vendor/range-slider.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <div class="header__wrapper">
-        <!--         
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>self-project-2022</title>
+    <link rel="stylesheet" href="./vendor/range-slider.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <!--         
         <div class="main-nav">
           <a href="#home">Home</a>
           <a href="#search">Search</a>
           <a href="#discover">Discover</a>
         </div> -->
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div id="pages">
-    <section id="home">
-      <div class="home-wrapper container"></div>
-    </section>
-    <section id="search">
-      <div class="search-wrapper container"></div>
-    </section>
-    <section id="discover">
-      <div class="discover-wrapper container"></div>
-    </section>
-  </div>
-  <!-- <div id="product-list" class="product-list container"></div> -->
-  <section class="join-wrapper"></section>
-  <footer class="footer-wrapper">all rights reserverd</footer>
-  <script id="template-home" type="text/x-handlebars-template">
-    <b>Hurra, działa! 1</b>
-    <div class="main-nav">
-      <a href="#home">Home</a>
-      <a href="#search">Search</a>
-      <a href="#discover">Discover</a>
+    <div id="pages">
+      <section id="home">
+        <div class="home-wrapper container"></div>
+      </section>
+      <section id="search">
+        <div class="search-wrapper container"></div>
+      </section>
+      <section id="discover">
+        <div class="discover-wrapper container"></div>
+      </section>
     </div>
-  </script>
-  <script id="search-site" type="text/x-handlebars-template">
-    <b>Hurra, działa! 2</b>
-    <div class="main-nav">
-      <a href="#home">Home</a>
-      <a href="#search">Search</a>
-      <a href="#discover">Discover</a>
-    </div>
-  </script>
-  <script id="template-discover" type="text/x-handlebars-template">
-    <b>Hurra, działa! 3</b>
-    <div class="main-nav">
-      <a href="#home">Home</a>
-      <a href="#search">Search</a>
-      <a href="#discover">Discover</a>
-    </div>
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="./vendor/range-slider.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-  <script src="./vendor/flickity.pkgd.min.js"></script>
-  <script src="js/app.js" type="module"></script>
-</body>
+    <!-- <div id="product-list" class="product-list container"></div> -->
+    <section class="join-wrapper"></section>
+    <footer class="footer-wrapper">all rights reserverd</footer>
+    <script id="template-home" type="text/x-handlebars-template">
+      <div>
+        <div class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#search">Search</a>
+          <a href="#discover">Discover</a>
+        </div>
+        <b>Strona Home</b>
+      </div>
+    </script>
+    <script id="search-site" type="text/x-handlebars-template">
+      <div>
+        <div class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#search">Search</a>
+          <a href="#discover">Discover</a>
+        </div>
+        <b>Strona Search</b>
+      </div>
+    </script>
+    <script id="template-discover" type="text/x-handlebars-template">
+      <div>
+        <div class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#search">Search</a>
+          <a href="#discover">Discover</a>
+        </div>
+        <b>Strona Discover</b>
+      </div>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./vendor/range-slider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="./vendor/flickity.pkgd.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+  </body>
 </html>
