@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -22,17 +24,16 @@ body {
     @extend .h2;
     text-decoration: none;
     color: white;
+    
     &.active {
       background: lighten($color-dark, 75%);
       color: pink;
     }
   }
-
 }
 
-div[class*='wrapper'] {
+div[class*="wrapper"] {
   background-color: black;
   width: 100%;
   height: 100%;
-
 }
