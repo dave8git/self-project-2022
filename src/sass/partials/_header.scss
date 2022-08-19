@@ -2,13 +2,35 @@
   background-image: url(../../images/background.jpg);
   background-position: center;
   background-size: cover;
-  
   height: 100vh;
-  
-
-
+}
+.header__container {
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  color: white;
+  justify-content: space-between;
+  padding-top: 400px;
 }
 
+.header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+
+  
+}
+
+.header__titlesubtitle {
+  display: flex;
+  flex-direction: column;
+
+}
 // .header__wrapper {
 //   // background-image: url(../../images/background.jpg);
 //   // width: 100%;
