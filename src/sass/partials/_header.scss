@@ -2,7 +2,8 @@
   background-image: url(../../images/background.jpg);
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  //height: 100vh;
+  position: relative;
 }
 
 .header__container {
@@ -16,8 +17,20 @@
   color: white;
   justify-content: space-between;
   padding-top: 400px;
-  background-color: rgba(252, 89, 89, 0);
-background-image: linear-gradient(180deg, rgba(252, 89, 89, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  
+ 
+}
+
+.header:after {
+
+  content: '';
+    position:absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(252, 89, 89, 0);
+    background-image: linear-gradient(180deg, rgba(252, 89, 89, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .header__content {
@@ -37,10 +50,21 @@ background-image: linear-gradient(180deg, rgba(252, 89, 89, 0) 0%, rgba(0, 0, 0,
 //   // height: 100%;
 // }
 .main-nav {
-  background-color:rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 4;
 }
+
 .main-nav-container {
   width: 200px;
   margin: 0 auto;
+  z-index: 4;
+}
+
+.discover-wrapper {
+  color: white;
+}
+
+#home, #search, #discover [class*="wrapper"] {
+ color: white;
 }
 
