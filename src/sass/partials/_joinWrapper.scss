@@ -1,0 +1,101 @@
+button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+
+.button-content {
+    display: flex;
+}
+.join-wrapper {
+    position: relative;
+}
+
+.join-wrapper .container {
+    margin: 0 auto;
+}
+.join__title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    position: absolute; 
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.join__button-content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translate(40%, -50%);
+    color: white;
+    font-size: 35px;
+    line-height: 35px;
+}
+
+.join__button-content span {
+    color: #4caf50;
+}
+
+.join__artistName {
+    position: relative;
+    list-style: none;
+    margin-left: 70px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: 0 auto;
+    z-index: 4;
+}
+
+// .join__newAlbum {
+//     position: absolute; 
+//     top: 120px;
+//     font-size: 12px;
+//     margin-left: 200px;
+// }
+
+.join__artistName li:nth-child(2) {
+    margin-left: 25px;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+}
+
+.join__artistName li span {
+    position: relative;
+}
+.join__artistName li span::after {
+   position: absolute;
+   content: '';
+   background: url("./../../images/artist.jpg");
+   background-position: center;
+   font-weight: bold;
+   width: 150px;
+   height: 180px;
+   z-index: -1;
+   left: -5px;
+   top: -115px;
+}
+
+.join__button-content::after {
+    position: absolute;
+    display: inline-block;
+    content: 'NEW ALBUM';
+    font-size: 12px;
+    top: 100px;
+    margin-left: 300px;
+}
