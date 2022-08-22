@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -42,23 +43,23 @@
   </div>
   <!-- <div id="product-list" class="product-list container"></div> -->
   <section class="join-wrapper">
-    <div class="container">
-      <div class="join__title">SUBSCRIBE NOW</div>
+    <div class="join__container">
+      <div class="join__title">SUBSCRIBE<span>&nbspNOW</span></div>
       <div class="join__button-content">
-        <button type="submit">JOIN NOW</button>
+        <button class="join__button" type="submit">JOIN NOW</button>
         <div class="join__artistName">
           <li>Dean</li>
           <li>Hen<span>son</span></li>
         </div>
         <!-- <div class="join__newAlbum">NEW ALBUM</div> -->
-
-      </div>
     </div>
-   
+  </div>
   </section>
   <footer class="footer-wrapper">all rights reserverd</footer>
   <script id="template-home" type="text/x-handlebars-template">
-    <div><b>strona 1</b></div>
+    <div><b>strona 1</b>
+      <audio class="player" src="">live</audio>
+    </div>
   </script>
   <script id="search-site" type="text/x-handlebars-template">
     <div><b>strona 2</b></div>
@@ -67,6 +68,7 @@
     <div><b>strona 3</b></div>
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 </html>

@@ -38,6 +38,13 @@ const app = {
     }
   },
 
+  activatePlayer: function() {
+    GreenAudioPlayer.init({
+      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
+      stopOthersOnPlay: true
+    });
+  },
+  
  
 
   activePage: function(pageId) {
@@ -65,7 +72,7 @@ const app = {
     const thisApp = this;
     thisApp.search = new Search();
   },
- 
+
   initDiscover: function () {
     const thisApp = this; 
     //const bookingElem = document.querySelector(select.containerOf.booking);

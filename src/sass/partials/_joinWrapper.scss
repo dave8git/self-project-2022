@@ -1,5 +1,5 @@
-button {
-  background-color: #4caf50; /* Green */
+.join-wrapper button {
+  background-color: #4caf50; 
   border: none;
   color: white;
   padding: 16px 32px;
@@ -10,30 +10,33 @@ button {
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 80px;
 }
 
-
-.button-content {
-    display: flex;
+.join__container {
+    margin: 0 auto;
+    width: 280px;
 }
+
 .join-wrapper {
+    //margin: 0 auto;
     position: relative;
 }
 
-.join-wrapper .container {
-    margin: 0 auto;
-}
 .join__title {
     display: flex;
     justify-content: center;
     color: white;
-    font-weight: bold;
     position: absolute; 
-    top: -20px;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 30px;
+    letter-spacing: 4px;
+}
 
+.join__title span {
+    font-weight: bold;
 }
 
 .join__button-content {
@@ -41,7 +44,7 @@ button {
     align-items: center;
     position: absolute;
     top: 50%;
-    transform: translate(40%, -50%);
+    transform: translateY(-50%);
     color: white;
     font-size: 35px;
     line-height: 35px;
@@ -51,10 +54,13 @@ button {
     color: #4caf50;
 }
 
+.join__button {
+    margin-right: 40px;
+}
+
 .join__artistName {
     position: relative;
     list-style: none;
-    margin-left: 70px;
     font-weight: bold;
     letter-spacing: 5px;
     margin: 0 auto;
