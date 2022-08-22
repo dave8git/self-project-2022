@@ -38,15 +38,6 @@ const app = {
     }
   },
 
-  activatePlayer: function() {
-    GreenAudioPlayer.init({
-      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
-      stopOthersOnPlay: true
-    });
-  },
-  
- 
-
   activePage: function(pageId) {
     const thisApp = this;
     /* add class "active" to matching pages, remove from non-matching */

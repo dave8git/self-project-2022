@@ -1,5 +1,5 @@
 .join-wrapper button {
-  background-color: #4caf50; 
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -14,94 +14,95 @@
 }
 
 .join__container {
-    margin: 0 auto;
-    width: 280px;
+  margin: 0 auto;
+  width: 280px;
 }
 
 .join-wrapper {
-    //margin: 0 auto;
-    position: relative;
+  //margin: 0 auto;
+  position: relative;
 }
 
 .join__title {
-    display: flex;
-    justify-content: center;
-    color: white;
-    position: absolute; 
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 30px;
-    letter-spacing: 4px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  letter-spacing: 4px;
 }
 
 .join__title span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .join__button-content {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 35px;
-    line-height: 35px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 35px;
+  line-height: 35px;
 }
 
 .join__button-content span {
-    color: #4caf50;
+  color: #4caf50;
 }
 
 .join__button {
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 .join__artistName {
-    position: relative;
-    list-style: none;
-    font-weight: bold;
-    letter-spacing: 5px;
-    margin: 0 auto;
-    z-index: 4;
+  position: relative;
+  list-style: none;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin: 0 auto;
+  z-index: 4;
 }
 
 // .join__newAlbum {
-//     position: absolute; 
+//     position: absolute;
 //     top: 120px;
 //     font-size: 12px;
 //     margin-left: 200px;
 // }
 
 .join__artistName li:nth-child(2) {
-    margin-left: 25px;
-    color: red;
-    font-weight: bold;
-    position: absolute;
+  margin-left: 25px;
+  color: red;
+  font-weight: bold;
+  position: absolute;
 }
 
 .join__artistName li span {
-    position: relative;
+  position: relative;
 }
+
 .join__artistName li span::after {
-   position: absolute;
-   content: '';
-   background: url("./../../images/artist.jpg");
-   background-position: center;
-   font-weight: bold;
-   width: 150px;
-   height: 180px;
-   z-index: -1;
-   left: -5px;
-   top: -115px;
+  position: absolute;
+  content: "";
+  background: url("./../../images/artist.jpg");
+  background-position: center;
+  font-weight: bold;
+  width: 150px;
+  height: 180px;
+  z-index: -1;
+  left: -5px;
+  top: -115px;
 }
 
 .join__button-content::after {
-    position: absolute;
-    display: inline-block;
-    content: 'NEW ALBUM';
-    font-size: 12px;
-    top: 100px;
-    margin-left: 300px;
+  position: absolute;
+  display: inline-block;
+  content: "NEW ALBUM";
+  font-size: 12px;
+  top: 100px;
+  margin-left: 300px;
 }
