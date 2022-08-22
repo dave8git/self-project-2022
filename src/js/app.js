@@ -1,4 +1,4 @@
-import {select, classNames} from './settings.js';
+import {select, classNames, settings} from './settings.js';
 import Discover from './components/Discover.js';
 import Home from './components/Home.js';
 import Search from './components/Search.js';
@@ -70,6 +70,22 @@ const app = {
     thisApp.discover = new Discover();
   },
   
+  initData: function () {
+    const thisApp = this;
+    thisApp.data = {};
+    const url = settings.db.url + '/' + settings.db.songs;
+    fetch(url).then(function (rawResponse) {
+      return rawResponse.json();
+    })
+      .then(function (parsedResponse) {
+        console.log('parsedResponse', parsedResponse);
+
+        thisApp.data.products = 
+          parsedResponse; 
+      });
+
+    console.log('thisApp.data', JSON.stringify(thisApp.data));
+  },
 
   init: function () {
     const thisApp = this;
@@ -77,6 +93,7 @@ const app = {
     thisApp.initPages();
     thisApp.initDiscover(); 
     thisApp.initSearch();
+    thisApp.initData();
   },
 };
 

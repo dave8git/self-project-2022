@@ -61,7 +61,11 @@
   <footer class="footer-wrapper">all rights reserverd</footer>
   <script id="template-home" type="text/x-handlebars-template">
     <div><b>strona 1</b>
-      <audio class="player" src="">live</audio>
+      <div class="audioWrapper">
+        <audio class="audioWrapper"> 
+          <source src="./songs/At_The_Top_David_Renda.mp3" type="audio/mpeg"> 
+        </audio>
+      </div>
     </div>
   </script>
   <script id="search-site" type="text/x-handlebars-template">
@@ -73,10 +77,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
   <script>
-    GreenAudioPlayer.init({
-      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
+    document.addEventListener('DOMContentLoaded', function() {
+      GreenAudioPlayer.init({
+      selector: '.audioWrapper', // inits Green Audio Player on each audio container that has class "player"
       stopOthersOnPlay: true
     });
+  });
   </script>
   <script src="js/app.js" type="module"></script>
 </body>
