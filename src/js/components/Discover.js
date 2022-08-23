@@ -16,6 +16,8 @@ export class Discover {
     const discoverContainer = document.querySelector(select.containerOf.discover);
     discoverContainer.appendChild(thisDiscover.element);  
   }
+
+  
 }
 
 export default Discover;

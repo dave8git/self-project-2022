@@ -1,7 +1,14 @@
+/* global GreenAudioPlayer */
 import {select, classNames, settings} from './settings.js';
 import Discover from './components/Discover.js';
 import Home from './components/Home.js';
 import Search from './components/Search.js';
+
+Handlebars.registerHelper('concat', function(arr) {
+  //arguments = [...arguments].slice(0, -1);
+  return arr.join(', ');
+});
+
 
 const app = {
   initPages: function () {
@@ -21,7 +28,6 @@ const app = {
       }
     }
     thisApp.activePage(pageMatchingHash);
-    //console.log('thisApp.navLinks', thisApp.navLinks);
 
     for(let link of thisApp.navLinks) {
       link.addEventListener('click', function(event) {
@@ -56,20 +62,27 @@ const app = {
   initHome() {
     const thisApp = this;
     //const homeSiteElem = document.querySelector(select.containerOf.home);
-    thisApp.home = new Home();
+    thisApp.home = new Home(thisApp.data);
   },
 
-  initSearch() {
+  initDiscover() {
     const thisApp = this;
-    thisApp.search = new Search();
-  },
-
-  initDiscover: function () {
-    const thisApp = this; 
-    //const bookingElem = document.querySelector(select.containerOf.booking);
+    //const homeSiteElem = document.querySelector(select.containerOf.home);
     thisApp.discover = new Discover();
   },
+
+  initSearch: function () {
+    const thisApp = this; 
+    //const bookingElem = document.querySelector(select.containerOf.booking);
+    thisApp.search = new Search(thisApp.data);
+  },
   
+  initPlugin: function () {
+    GreenAudioPlayer.init({
+      selector: '.audioWrapper', // inits Green Audio Player on each audio container that has class "player"
+      stopOthersOnPlay: true
+    });
+  },
   initData: function () {
     const thisApp = this;
     thisApp.data = {};
@@ -78,22 +91,22 @@ const app = {
       return rawResponse.json();
     })
       .then(function (parsedResponse) {
-        console.log('parsedResponse', parsedResponse);
+        //console.log('parsedResponse', parsedResponse);
 
-        thisApp.data.products = 
-          parsedResponse; 
+        thisApp.data.songs = parsedResponse; 
+        thisApp.initHome();
+        thisApp.initSearch();
+        thisApp.initPlugin();
       });
 
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
+    //console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
 
   init: function () {
     const thisApp = this;
-    thisApp.initHome();
+    thisApp.initData(); 
     thisApp.initPages();
     thisApp.initDiscover(); 
-    thisApp.initSearch();
-    thisApp.initData();
   },
 };
 

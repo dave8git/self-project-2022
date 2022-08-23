@@ -1,20 +1,19 @@
 import {select, templates} from './../settings.js';
 import {utils} from './../utils.js';
+import Plugin from './Plugin.js';
 //import GreenAudioPlayer from './green-audio-player.js';
 
 export class Home {
-  constructor() {
+  constructor(data) {
     const thisHome = this; 
     thisHome.render();
     //thisHome.initPlugin();
+    const pluginWrapper = document.querySelector(select.containerOf.plugin);
+    new Plugin(data, pluginWrapper);
+
   }
 
-  // initPlugin() {
-  //   GreenAudioPlayer.init({
-  //     selector: '.player', // inits Green Audio Player on each audio container that has class "player"
-  //     stopOthersOnPlay: true
-  //   });
-  // }
+  
 
   render() {
     const thisHome = this;

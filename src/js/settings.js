@@ -3,12 +3,14 @@ export const select = {
     homeSite: '#template-home',
     searchSite: '#search-site',
     discoverSite: '#template-discover',
+    plugin: '#template-plugin',
   },
   containerOf: {
     home: '.home-wrapper',
     pages: '#pages',
     discover: '.discover-wrapper',
     search: '.search-wrapper',
+    plugin: '.home-wrapper',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -130,5 +132,8 @@ export const templates = {
   ),
   discoverSite: Handlebars.compile(
     document.querySelector(select.templateOf.discoverSite).innerHTML
+  ),
+  plugin: Handlebars.compile(
+    document.querySelector(select.templateOf.plugin).innerHTML
   ),
 };
