@@ -96,6 +96,7 @@ const app = {
         thisApp.data.songs = parsedResponse; 
         thisApp.initHome();
         thisApp.initSearch();
+        thisApp.initSearch();
         thisApp.initPlugin();
       });
 
@@ -106,6 +107,7 @@ const app = {
     const thisApp = this;
     thisApp.initData(); 
     thisApp.initPages();
+    
     thisApp.initDiscover(); 
   },
 };

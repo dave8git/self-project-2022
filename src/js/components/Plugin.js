@@ -3,22 +3,20 @@ import {utils} from './../utils.js';
 
 
 class Plugin {
-  constructor(data) {
-    console.log('data-data', data);
+  constructor(data, wrapper) {
     const thisPlugin = this; 
-    thisPlugin.render(data);
+    thisPlugin.render(data, wrapper);
     //thisPlugin.initPlugin();
     
   }
 
-  render(data) {
+  render(data, wrapper) {
     const thisPlugin = this;
-    console.log('data', JSON.stringify(data));
-    console.log('działa');
+    console.log('wrapper', wrapper);
     const generatedHTML = templates.plugin(data); // generate HTML based on template 
     thisPlugin.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
-    const pluginContainer = document.querySelector(select.containerOf.plugin);// find menu container 
-    console.log(pluginContainer);
+    const pluginContainer = wrapper; //document.querySelector(select.containerOf.plugin); // find menu container 
+    console.log('pluginContainer', pluginContainer);
     pluginContainer.appendChild(thisPlugin.element); // add element to menu 
   }
 }

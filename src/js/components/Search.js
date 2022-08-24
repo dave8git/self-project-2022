@@ -8,7 +8,8 @@ export class Search{
     thisSearch.data = data;
     thisSearch.render();
 
-    const pluginWrapper = document.querySelector('.searchPlayers');
+    const pluginWrapper = document.querySelector('.search-wrapper');
+    console.log('search pluginWrapper', pluginWrapper);
     new Plugin(data, pluginWrapper);
     thisSearch.search();
   }
@@ -22,7 +23,7 @@ export class Search{
   }
   
   search() {
-    //const thisSearch = this;
+    const thisSearch = this;
     document.querySelector('.search-song').addEventListener('keyup', function(e) {
       e.preventDefault();
     });
