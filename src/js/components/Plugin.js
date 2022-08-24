@@ -7,7 +7,6 @@ class Plugin {
     const thisPlugin = this; 
     thisPlugin.render(data, wrapper);
     //thisPlugin.initPlugin();
-    
   }
 
   render(data, wrapper) {
@@ -16,7 +15,7 @@ class Plugin {
     const generatedHTML = templates.plugin(data); // generate HTML based on template 
     thisPlugin.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
     const pluginContainer = wrapper; //document.querySelector(select.containerOf.plugin); // find menu container 
-    console.log('pluginContainer', pluginContainer);
+    //console.log('pluginContainer', pluginContainer);
     pluginContainer.appendChild(thisPlugin.element); // add element to menu 
   }
 }

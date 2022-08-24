@@ -6,21 +6,20 @@ export class Search{
   constructor(data) {
     const thisSearch = this; 
     thisSearch.data = data;
-    thisSearch.render();
+    //thisSearch.render();
 
-    const pluginWrapper = document.querySelector('.search-wrapper');
-    console.log('search pluginWrapper', pluginWrapper);
-    new Plugin(data, pluginWrapper);
-    thisSearch.search();
+    const pluginWrapper1 = document.querySelector('.search-wrapper');
+    new Plugin(data, pluginWrapper1);
+    //thisSearch.search();
   }
 
-  render() {
-    const thisSearch = this;
-    const generatedHTML = templates.searchSite(); // generate HTML based on template 
-    thisSearch.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
-    const searchContainer = document.querySelector(select.containerOf.search);// find menu container \
-    searchContainer.appendChild(thisSearch.element); // add element to menu 
-  }
+  // render() {
+  //   const thisSearch = this;
+  //   const generatedHTML = templates.searchSite(); // generate HTML based on template 
+  //   thisSearch.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
+  //   const searchContainer = document.querySelector(select.containerOf.search);// find menu container \
+  //   searchContainer.appendChild(thisSearch.element); // add element to menu 
+  // }
   
   search() {
     const thisSearch = this;

@@ -6,22 +6,20 @@ import Plugin from './Plugin.js';
 export class Home {
   constructor(data) {
     const thisHome = this; 
-    thisHome.render();
+    //thisHome.render();
     //thisHome.initPlugin();
-    const pluginWrapper = document.querySelector(select.containerOf.plugin);
+    const pluginWrapper = document.querySelector('.home-wrapper');
     new Plugin(data, pluginWrapper);
 
   }
 
-  
-
-  render() {
-    const thisHome = this;
-    const generatedHTML = templates.homeSite(); // generate HTML based on template 
-    thisHome.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
-    const homeContainer = document.querySelector(select.containerOf.home);// find menu container 
-    homeContainer.appendChild(thisHome.element); // add element to menu 
-  }
+  // render() {
+  //   const thisHome = this;
+  //   const generatedHTML = templates.homeSite(); // generate HTML based on template 
+  //   thisHome.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
+  //   const homeContainer = document.querySelector(select.containerOf.home);// find menu container 
+  //   homeContainer.appendChild(thisHome.element); // add element to menu 
+  // }
   
   
 }
