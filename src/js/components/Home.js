@@ -14,16 +14,31 @@ export class Home {
   }
 
   hideClass(thisElement) {
-    const thisHome = this;
+    //const thisHome = this;
     const clickedElement = thisElement;
     const href = clickedElement.getAttribute('attr');
     const categoryElements = document.querySelectorAll('.category');
+
     categoryElements.forEach(category => {
-      if(category.getAttribute('attr') !== href) {
-        category.parentNode.parentNode.classList.add('non-visible');
-        //console.log('category.parentNode', category.parentNode.parentNode);
-      }
+      category.parentNode.parentNode.classList.add('non-visible');
     });
+
+    const allElemCat = document.querySelectorAll('[attr="'+href+'"]'); 
+    //console.log('!!!!!!!!!!!', [class="${href}"]);
+
+    allElemCat.forEach(elem => elem.parentNode.parentNode.classList.remove('non-visible'));
+    console.log('allElemCat', allElemCat);
+   
+    // categoryElements.forEach(category => {
+    //   // if(category.getAttribute('attr') !== href) {
+    //   //   category.parentNode.parentNode.classList.add('non-visible');
+    //   //   //console.log('category.parentNode', category.parentNode.parentNode);
+    //   //   category.parentNode.parentNode.classList.add('visible');
+    //   // }
+
+    // });
+    allElemCat.forEach(elem => console.log(elem));//elem.classList.remove('non-visible'));
+    
     //const categoryLinks = document.querySelector
   }
 

@@ -1,5 +1,5 @@
-import {select, templates} from '../settings.js';
-import {utils} from '../utils.js';
+//import {select, templates} from '../settings.js';
+//import {utils} from '../utils.js';
 import Plugin from './Plugin.js';
 
 export class Search{
@@ -22,7 +22,7 @@ export class Search{
   // }
   
   search() {
-    const thisSearch = this;
+    //const thisSearch = this;
     document.querySelector('.search-song').addEventListener('keyup', function(e) {
       e.preventDefault();
     });
