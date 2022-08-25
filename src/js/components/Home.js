@@ -6,38 +6,36 @@ import Plugin from './Plugin.js';
 export class Home {
   constructor(data) {
     const thisHome = this; 
-    thisHome.render();
+    //thisHome.render();
     //thisHome.initPlugin();
     const pluginWrapper = document.querySelector('.home-wrapper');
     new Plugin(data, pluginWrapper);
     thisHome.initElements(); 
   }
 
-  onCategoryClick() {
+  hideClass(thisElement) {
     const thisHome = this;
-    event.preventDefault();
-    //const allLinks = thisHome.pluginWrapper.querySelectorAll('.category');
-    //const clickedElement = this;
-    //const attribute = clickedElement.getAttribute('attr');
-    //console.log('attribute', attribute);
-    //const categories = document.querySelectorAll('.category');
-
-    // for(let category of categories) {
-    //   //console.log(category.getAttribute('attr'));
-    //   if(category.getAttribute('attr') !== clickedElement.getAttribute('attr')) {
-    //     console.log('dziala');
-    //     category.classList.add('playerHidden');
-    //   }
-    // }
-
+    const clickedElement = thisElement;
+    const href = clickedElement.getAttribute('attr');
+    const categoryElements = document.querySelectorAll('.category');
+    categoryElements.forEach(category => {
+      if(category.getAttribute('attr') !== href) {
+        category.parentNode.parentNode.classList.add('non-visible');
+        //console.log('category.parentNode', category.parentNode.parentNode);
+      }
+    });
+    //const categoryLinks = document.querySelector
   }
+
   initElements() {
     const thisHome = this;
-    const allLinks = thisHome.element.querySelectorAll('.category');
-    console.log(allLinks);
-    for (let link of allLinks) {
-      link.addEventListener('click', thisHome.onCategoryClick);
-    }
+    const categoryElements = document.querySelectorAll('.category');
+    console.log(categoryElements);
+    categoryElements.forEach(category => category.addEventListener('click', function (event) {
+      event.preventDefault();
+      thisHome.hideClass(this);
+      console.log('thisthisthis', this);
+    }));
   }
 
   render() {
