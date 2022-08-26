@@ -45,25 +45,22 @@ export class Home {
 
   classInvisible() {
     const thisHome = this;
-    console.log(thisHome);
-    const clickedElement = thisHome;
-    const clickedElementAttribute = clickedElement.getAttribute('attr');
-    console.log(clickedElementAttribute);
-    event.preventDefault();
     const elements = document.querySelectorAll('.audioElement');
     for (let element of elements) {
-      let attributes = element.getAttribute('attr');
-      let attributesArray = attributes.split(',');
-      
-      for (let attribute of attributesArray) {
-        if(clickedElementAttribute !== attribute) {
-          element.classList.add('non-visible');
-        }
+      element.classList.remove('non-visible');
+    }
+    const clickedElement = thisHome;
+    const clickedElementAttribute = clickedElement.getAttribute('attr');
+    event.preventDefault();
+    for (let element of elements) {
+      element.classList.remove('non-visible');
+    }
+    for (let element of elements) {
+      let attributeArray = element.getAttribute('attr').split(',');
+      if(!attributeArray.includes(clickedElementAttribute)) {
+        element.classList.add('non-visible');
       }
     }
-
-
-    console.log('elements', elements);
   }
 
   addListeners() {
@@ -73,8 +70,6 @@ export class Home {
     for (let categoryElement of categoryElements) {
       categoryElement.addEventListener('click', thisHome.classInvisible);
     }
-
-
   }
 
   render() {
