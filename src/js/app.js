@@ -74,7 +74,21 @@ const app = {
   initSearch: function () {
     const thisApp = this; 
     //const bookingElem = document.querySelector(select.containerOf.booking);
-    thisApp.search = new Search(thisApp.data);
+    //const songs = [];
+    //thisApp.search = new Search(thisApp.data);
+    const button = document.querySelector('.search-button');
+    
+    button.addEventListener('click', function () {
+      let inputValue = document.querySelector('.search-song').value;
+      let songsObject = {songs: []};
+      for(let i = 0; i < thisApp.data.songs.length; i++) {
+        if(thisApp.data.songs[i].title.includes(inputValue)) {
+          songsObject.songs.push(thisApp.data.songs[i]);
+        } 
+      }
+      thisApp.search = new Search(songsObject);
+      thisApp.initPlugin();
+    });
   },
   
   initPlugin: function () {

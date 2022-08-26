@@ -12,6 +12,7 @@ export class Home {
     new Plugin(data, pluginWrapper);
     //thisHome.initElements(); 
     thisHome.addListeners();
+    console.log('homeData', data);
   }
 
   // hideClass(thisElement) {

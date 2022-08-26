@@ -8,8 +8,9 @@ export class Search{
     thisSearch.data = data;
     //thisSearch.render();
 
-    const pluginWrapper1 = document.querySelector('.search-wrapper');
+    const pluginWrapper1 = document.querySelector('.pluginsWrapper');
     new Plugin(data, pluginWrapper1);
+    console.log(data);
     //thisSearch.search();
   }
 
