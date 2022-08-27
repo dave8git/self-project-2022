@@ -44,18 +44,14 @@ export class Home {
   //   }));
   // }
 
-  classInvisible() {
+  classInvisible(event) {
     const thisHome = this;
-    const elements = document.querySelectorAll('.audioElement');
-    for (let element of elements) {
-      element.classList.remove('non-visible');
-    }
+    const homeWrapper = document.querySelector('.home-wrapper');
+    const elements = homeWrapper.querySelectorAll('.audioElement');
+    event.target.classList.remove('non-visible');
     const clickedElement = thisHome;
     const clickedElementAttribute = clickedElement.getAttribute('attr');
     event.preventDefault();
-    for (let element of elements) {
-      element.classList.remove('non-visible');
-    }
     for (let element of elements) {
       let attributeArray = element.getAttribute('attr').split(',');
       if(!attributeArray.includes(clickedElementAttribute)) {
@@ -68,9 +64,12 @@ export class Home {
     const thisHome = this;
     const categoryElements = document.querySelectorAll('.category');
 
-    for (let categoryElement of categoryElements) {
+    categoryElements.forEach(categoryElement => {
       categoryElement.addEventListener('click', thisHome.classInvisible);
-    }
+    });
+    // for (let categoryElement of categoryElements) {
+    //   categoryElement.addEventListener('click', thisHome.classInvisible);
+    // }
   }
 
   render() {

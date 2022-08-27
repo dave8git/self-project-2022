@@ -78,7 +78,7 @@ const app = {
     //thisApp.search = new Search(thisApp.data);
     const button = document.querySelector('.search-button');
     
-    button.addEventListener('click', function () {
+    button.addEventListener('click', function () { 
       let inputValue = document.querySelector('.search-song').value;
       let songsObject = {songs: []};
       for(let i = 0; i < thisApp.data.songs.length; i++) {
