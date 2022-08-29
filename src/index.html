@@ -25,6 +25,9 @@
           <a href="#search">Search</a>
           <a href="#discover">Discover</a>
         </div>
+        <div class="categories">
+          <div>Categories</div>
+        </div>
     </div>
     <div class="main-nav-container">
     </div>
@@ -37,6 +40,7 @@
       <div class="search-wrapper container">
         <input type="text" name="song" class="search-song" id="search">
         <button class="search-button">SEARCH</button>
+        
         <div class="searchPlayers">
         </div>
         <div class="pluginsWrapper">
@@ -72,7 +76,9 @@
     <div><b>strona 2</b></div>
   </script>
   <script id="template-discover" type="text/x-handlebars-template">
-    <div><b>strona 3</b></div>
+    <div>
+      <b>strona 3</b>
+    </div>
   </script>
   <script id="template-plugin" type="text/x-handlebars-template">
     <div>
@@ -93,6 +99,11 @@
       </div>
     </div>     
     {{/each}} 
+    </div>
+  </script>
+  <script id="category-plugin" type="text/x-handlebars-template">
+    <div>
+      <a>this</a>
     </div>
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>

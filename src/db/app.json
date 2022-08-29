@@ -32,5 +32,16 @@
             "categories": ["Powerful", "Insomnia"],
             "ranking": 3
         }
-    ]
+    ],
+    "categorie": [
+            {
+                "category": "Powerful"
+            }, 
+            {
+                "category": "Relax"
+            },
+            {
+                "category": "Fun"
+            }
+        ]
 }

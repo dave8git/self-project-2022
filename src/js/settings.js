@@ -4,6 +4,7 @@ export const select = {
     searchSite: '#search-site',
     discoverSite: '#template-discover',
     plugin: '#template-plugin',
+    category: '#category-plugin',
   },
   containerOf: {
     home: '.home-wrapper',
@@ -135,5 +136,8 @@ export const templates = {
   ),
   plugin: Handlebars.compile(
     document.querySelector(select.templateOf.plugin).innerHTML
+  ),
+  category: Handlebars.compile(
+    document.querySelector(select.templateOf.category).innerHTML
   ),
 };

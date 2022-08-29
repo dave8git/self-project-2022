@@ -1,5 +1,6 @@
 import {select, templates} from './../settings.js';
 import {utils} from './../utils.js';
+import Category from './Category.js';
 import Plugin from './Plugin.js';
 //import GreenAudioPlayer from './green-audio-player.js';
 
@@ -9,7 +10,13 @@ export class Home {
     //thisHome.render();
     //thisHome.initPlugin();
     const pluginWrapper = document.querySelector('.home-wrapper');
+    const categoryWrapper = document.querySelector('.categories');
     new Plugin(data, pluginWrapper);
+    new Category(data, categoryWrapper);
+
+    console.log('data', data);
+
+    console.log(categoryWrapper);
     //thisHome.initElements(); 
     thisHome.addListeners();
     console.log('homeData', data);
@@ -68,9 +75,6 @@ export class Home {
     categoryElements.forEach(categoryElement => {
       categoryElement.addEventListener('click', thisHome.classInvisible);
     });
-    // for (let categoryElement of categoryElements) {
-    //   categoryElement.addEventListener('click', thisHome.classInvisible);
-    // }
   }
 
   render() {
