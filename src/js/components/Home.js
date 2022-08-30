@@ -14,12 +14,12 @@ export class Home {
     new Plugin(data, pluginWrapper);
     new Category(data, categoryWrapper);
 
-    console.log('data', data);
+    //console.log('data', data);
 
-    console.log(categoryWrapper);
+    //console.log(categoryWrapper);
     //thisHome.initElements(); 
     thisHome.addListeners();
-    console.log('homeData', data);
+    //console.log('homeData', data);
 
   }
 
@@ -81,7 +81,7 @@ export class Home {
     const thisHome = this;
     const generatedHTML = templates.homeSite(); // generate HTML based on template 
     thisHome.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
-    console.log(thisHome.element);
+    //console.log(thisHome.element);
     const homeContainer = document.querySelector(select.containerOf.home);// find menu container 
     homeContainer.appendChild(thisHome.element); // add element to menu 
   }
