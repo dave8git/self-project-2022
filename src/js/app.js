@@ -65,23 +65,25 @@ const app = {
     //const homeSiteElem = document.querySelector(select.containerOf.home);
     thisApp.home = new Home(thisApp.data);
 
-
-    const homeWrapper = document.querySelector('.home-wrapper');
-    let audioData = homeWrapper.querySelectorAll('audio');
-    console.log(audioData);
-    // for (let i = 0; i < audioData.length; i++) {
-    //   console.log('działą');
-    // }
-    homeWrapper.addEventListener('play', function () {
-      console.log('PLAY DZIAŁĄ');
-    });
-    audioData.forEach(audio => {  console.log(audio); 
-      audio.addEventListener('play', (event) => {
-        console.log('działa play');
-        thisApp.collectData(event); 
-      });});
-    //console.log('ap72',audioData);
+    setTimeout(() => {
+      const homeWrapper = document.querySelector('.home-wrapper');
+      let audioData = homeWrapper.querySelectorAll('audio');
+      console.log(audioData);
+      // for (let i = 0; i < audioData.length; i++) {
+      //   console.log('działą');
+      // }
+      homeWrapper.addEventListener('play', function () {
+        console.log('PLAY DZIAŁĄ');
+      });
+      audioData.forEach(audio => {  console.log(audio); 
+        audio.addEventListener('play', (event) => {
+          console.log('działa play');
+          thisApp.collectData(event); 
+          console.log('event.target.source', event.target.source);
+        });});
+    }, 0);
   },
+  
   collectData(event) {
     console.log(event.target);
     //thisApp.collectData(event, )
