@@ -85,8 +85,6 @@ export class Home {
     const homeContainer = document.querySelector(select.containerOf.home);// find menu container 
     homeContainer.appendChild(thisHome.element); // add element to menu 
   }
-  
-  
 }
 
 export default Home;

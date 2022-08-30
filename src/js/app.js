@@ -64,12 +64,33 @@ const app = {
     const thisApp = this;
     //const homeSiteElem = document.querySelector(select.containerOf.home);
     thisApp.home = new Home(thisApp.data);
-  },
 
+
+    const homeWrapper = document.querySelector('.home-wrapper');
+    let audioData = homeWrapper.querySelectorAll('audio');
+    console.log(audioData);
+    // for (let i = 0; i < audioData.length; i++) {
+    //   console.log('działą');
+    // }
+    homeWrapper.addEventListener('play', function () {
+      console.log('PLAY DZIAŁĄ');
+    });
+    audioData.forEach(audio => {  console.log(audio); 
+      audio.addEventListener('play', (event) => {
+        console.log('działa play');
+        thisApp.collectData(event); 
+      });});
+    //console.log('ap72',audioData);
+  },
+  collectData(event) {
+    console.log(event.target);
+    //thisApp.collectData(event, )
+  },
   initDiscover() {
     const thisApp = this;
     //const homeSiteElem = document.querySelector(select.containerOf.home);
-    thisApp.discover = new Discover();
+    console.log('!', thisApp.data);
+    thisApp.discover = new Discover(thisApp.data);
   },
 
   initSearch: function () {
@@ -113,6 +134,7 @@ const app = {
         thisApp.data.songs = parsedResponse; 
         thisApp.initHome();
         thisApp.initSearch();
+        thisApp.initDiscover();
         thisApp.initPlugin();
         //thisApp.initCategoriesPlugin();
       });
@@ -123,8 +145,8 @@ const app = {
   init: function () {
     const thisApp = this;
     thisApp.initData(); 
-    thisApp.initPages();
-    thisApp.initDiscover(); 
+    thisApp.initPages(); 
+    thisApp.stats = {};
   },
 };
 

@@ -42,14 +42,18 @@ export class Search{
         // console.log('attr type', typeof(attr));
         // console.log('optionValue type', typeof(optionValue));
         // console.log('', attr == optionValue);
-
+        console.log('category', category);
+        // console.log('title 1', title);
+        console.log('optionValue 1', optionValue);
         if(attr.includes(inputValue)  &&  category.includes(optionValue)) {
-          console.log('category', category);
-          // console.log('title 1', title);
-          // console.log('optionValue 1', optionValue);
+          
           // console.log('w pętli');
           audioElem.style.display = '';
         } else if (inputValue == '' && category.includes(optionValue)) {
+          audioElem.style.display = '';
+        } else if (inputValue == '' && optionValue == '') {
+          audioElem.style.display = '';
+        } else if (attr.includes(inputValue) && optionValue == '') { 
           audioElem.style.display = '';
         } else {
           audioElem.style.display = 'none';
@@ -75,6 +79,7 @@ export class Search{
   renderOption(data, wrapper) {
     const thisSearch = this; 
     console.log('thisSearch.singleCategories', thisSearch.singleCategories);
+    thisSearch.options = '<option selected value> -- select an option -- </option>';
     for(let i = 0; i < thisSearch.singleCategories.length; i++) {
       thisSearch.options += '<option value="'+ thisSearch.singleCategories[i] + '">' + thisSearch.singleCategories[i] + '</option>';
 

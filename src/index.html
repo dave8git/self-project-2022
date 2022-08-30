@@ -78,7 +78,9 @@
   </script>
   <script id="template-discover" type="text/x-handlebars-template">
     <div>
+      <button class="button-discover">Choose for me</button>
       <b>strona 3</b>
+      <div class="songElement"></div>
     </div>
   </script>
   <script id="template-plugin" type="text/x-handlebars-template">
@@ -102,10 +104,16 @@
     {{/each}} 
     </div>
   </script>
-  <script id="category-plugin" type="text/x-handlebars-template">
+  <script id="song-plugin" type="text/x-handlebars-template">
     <div>
-      <a>this</a>
+      <div>{{title}}</div>
+      <div class="songWrapper">
+        <audio> 
+          <source src="./songs/{{ filename }}" type="audio/mpeg"> 
+        </audio>
+      </div>
     </div>
+     
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
