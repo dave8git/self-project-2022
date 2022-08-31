@@ -57,6 +57,10 @@ input, select, textarea{
   border: orange;
 }
 
+#pages > * {
+  display: none;
+}
+
 .categories {
   z-index: 20;
 }
