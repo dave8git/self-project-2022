@@ -16,7 +16,8 @@ export class Search{
     //thisSearch.search();
     thisSearch.hideClass();
     thisSearch.initData(data); 
-    thisSearch.renderOption(data, optionWrapper); 
+    thisSearch.renderOption(data, optionWrapper);
+    thisSearch.addListeners(); 
   }
 
   hideClass() {
@@ -93,7 +94,7 @@ export class Search{
     const thisSearch = this;
     const generatedHTML = templates.searchSite(); // generate HTML based on template 
     thisSearch.element = utils.createDOMFromHTML(generatedHTML); // create element using utils.createElementFromHTML
-    const searchContainer = document.querySelector(select.containerOf.search);// find menu container \
+    const searchContainer = document.querySelector(select.containerOf.search);// find menu container 
     searchContainer.appendChild(thisSearch.element); // add element to menu 
   }
   
@@ -102,6 +103,40 @@ export class Search{
     document.querySelector('.search-song').addEventListener('keyup', function(e) {
       e.preventDefault();
     });
+  }
+
+  addListeners() {
+    const thisSearch = this;
+    const searchWrapper = document.querySelector('.search-wrapper');
+    console.log(searchWrapper);
+    const categoryElements = searchWrapper.querySelectorAll('.category');
+    categoryElements.forEach(categoryElement => { 
+      categoryElement.addEventListener('click', thisSearch.classInvisible);
+    });
+    // for(let element of categoryElements) {
+    //   element.addEventListener('click', function (event) {
+    //     event.preventDefault();
+    //     thisSearch.classInvisible();
+    //   });
+    // }
+  }
+
+  classInvisible() {
+    console.log('kategoria kliknięta');
+    const thisSearch = this;
+    event.preventDefault();
+    const searchWrapper = document.querySelector('.search-wrapper');
+    const elements = searchWrapper.querySelectorAll('.audioElement');
+    event.target.classList.remove('non-visible');
+    const clickedElement = thisSearch;
+    const clickedElementAttribute = clickedElement.getAttribute('attr');
+    event.preventDefault();
+    for (let element of elements) {
+      let attributeArray = element.getAttribute('attr').split(',');
+      if(!attributeArray.includes(clickedElementAttribute)) {
+        element.classList.add('non-visible');
+      }
+    }
   }
 }
 

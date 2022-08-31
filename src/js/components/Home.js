@@ -13,14 +13,11 @@ export class Home {
     const categoryWrapper = document.querySelector('.categories');
     new Plugin(data, pluginWrapper);
     new Category(data, categoryWrapper);
-
     //console.log('data', data);
-
     //console.log(categoryWrapper);
     //thisHome.initElements(); 
     thisHome.addListeners();
-    //console.log('homeData', data);
-
+    //console.log('homeData', data);S
   }
 
   // hideClass(thisElement) {
@@ -54,6 +51,7 @@ export class Home {
 
   classInvisible(event) {
     const thisHome = this;
+    event.preventDefault();
     const homeWrapper = document.querySelector('.home-wrapper');
     const elements = homeWrapper.querySelectorAll('.audioElement');
     event.target.classList.remove('non-visible');
@@ -70,7 +68,9 @@ export class Home {
 
   addListeners() {
     const thisHome = this;
-    const categoryElements = document.querySelectorAll('.category');
+    const homeWrapper = document.querySelector('.home-wrapper');
+    console.log(homeWrapper);
+    const categoryElements = homeWrapper.querySelectorAll('.category');
 
     categoryElements.forEach(categoryElement => {
       categoryElement.addEventListener('click', thisHome.classInvisible);
