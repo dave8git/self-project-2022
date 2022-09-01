@@ -54,10 +54,14 @@ export class Home {
     event.preventDefault();
     const homeWrapper = document.querySelector('.home-wrapper');
     const elements = homeWrapper.querySelectorAll('.audioElement');
+    const categoryElements = document.querySelectorAll('.category');
     event.target.classList.remove('non-visible');
     const clickedElement = thisHome;
     const clickedElementAttribute = clickedElement.getAttribute('attr');
-    event.preventDefault();
+    for(let categoryElement of categoryElements) {
+      categoryElement.classList.remove('categoryHighlight');
+    }
+    clickedElement.classList.add('categoryHighlight');
     for (let element of elements) {
       let attributeArray = element.getAttribute('attr').split(',');
       if(!attributeArray.includes(clickedElementAttribute)) {
