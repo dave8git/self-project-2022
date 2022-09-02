@@ -52,6 +52,9 @@ export class Search{
           // console.log('w pętli');
           audioElem.style.display = '';
         } else if (inputValue == '' && category.includes(optionValue)) {
+          for(let audioElem of searchAudioElements) {
+            audioElem.classList.remove('non-visible');
+          }
           audioElem.style.display = '';
         } else if (inputValue == '' && optionValue == '') {
           for(let audioElem of searchAudioElements) {
@@ -59,8 +62,14 @@ export class Search{
           }
           audioElem.style.display = '';
         } else if (attr.includes(inputValue) && optionValue == '') { 
+          for(let audioElem of searchAudioElements) {
+            audioElem.classList.remove('non-visible');
+          }
           audioElem.style.display = '';
         } else {
+          for(let audioElem of searchAudioElements) {
+            audioElem.classList.remove('non-visible');
+          }
           audioElem.style.display = 'none';
         }
       }

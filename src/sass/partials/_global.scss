@@ -64,3 +64,12 @@ input, select, textarea{
 .categoryHighlight {
   color: red; 
 }
+
+.songElementWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.audioElement {
+  margin: 0 auto;
+}
