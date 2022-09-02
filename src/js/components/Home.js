@@ -56,6 +56,9 @@ export class Home {
     const elements = homeWrapper.querySelectorAll('.audioElement');
     const categoryElements = document.querySelectorAll('.category');
     event.target.classList.remove('non-visible');
+    for(let element of elements) {
+      element.classList.remove('non-visible');
+    }
     const clickedElement = thisHome;
     const clickedElementAttribute = clickedElement.getAttribute('attr');
     for(let categoryElement of categoryElements) {
