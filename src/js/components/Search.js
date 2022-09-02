@@ -31,21 +31,22 @@ export class Search{
       //console.log('selectedOption', selectedOption);
      
       const searchWrapper = document.querySelector('.search-wrapper');
-      let searchAudioElements = searchWrapper.querySelectorAll('.audioElement');
+      const searchAudioElements = searchWrapper.querySelectorAll('.audioElement');
+      
       for (let audioElem of searchAudioElements) {
         let attr = audioElem.getAttribute('title');
         //let title = audioElem.getAttribute('title');
         let category = audioElem.getAttribute('attr').split(',');
-        console.log(category);
+        //console.log(category);
         // console.log('optionValue.options', optionValue);
         // console.log('attr', attr);
         // console.log('title type', typeof(title));
         // console.log('attr type', typeof(attr));
         // console.log('optionValue type', typeof(optionValue));
         // console.log('', attr == optionValue);
-        console.log('category', category);
+        //console.log('category', category);
         // console.log('title 1', title);
-        console.log('optionValue 1', optionValue);
+        //console.log('optionValue 1', optionValue);
         if(attr.includes(inputValue)  &&  category.includes(optionValue)) {
           
           // console.log('w pętli');
@@ -53,6 +54,9 @@ export class Search{
         } else if (inputValue == '' && category.includes(optionValue)) {
           audioElem.style.display = '';
         } else if (inputValue == '' && optionValue == '') {
+          for(let audioElem of searchAudioElements) {
+            audioElem.classList.remove('non-visible');
+          }
           audioElem.style.display = '';
         } else if (attr.includes(inputValue) && optionValue == '') { 
           audioElem.style.display = '';
@@ -121,12 +125,16 @@ export class Search{
     // }
   }
 
-  classInvisible() {
+  classInvisible(event) {
     console.log('kategoria kliknięta');
     const thisSearch = this;
     event.preventDefault();
     const searchWrapper = document.querySelector('.search-wrapper');
     const elements = searchWrapper.querySelectorAll('.audioElement');
+    for(let element of elements) {
+      element.classList.remove('non-visible');
+      console.log('classList.remove');
+    }
     event.target.classList.remove('non-visible');
     const clickedElement = thisSearch;
     const clickedElementAttribute = clickedElement.getAttribute('attr');
