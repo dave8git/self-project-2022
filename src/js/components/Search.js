@@ -34,7 +34,7 @@ export class Search{
       let searchAudioElements = searchWrapper.querySelectorAll('.audioElement');
       for (let audioElem of searchAudioElements) {
         let attr = audioElem.getAttribute('title');
-        let title = audioElem.getAttribute('title');
+        //let title = audioElem.getAttribute('title');
         let category = audioElem.getAttribute('attr').split(',');
         console.log(category);
         // console.log('optionValue.options', optionValue);
