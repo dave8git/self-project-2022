@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -56,10 +57,17 @@ input, select, textarea{
   color: #ff0000;
   border: orange;
 }
+.categoriesWrapper {
+  display: flex;
+  
+}
 
 .categories {
+  margin: 0 auto;
   z-index: 20;
+
 }
+
 
 .categoryHighlight {
   color: red; 
