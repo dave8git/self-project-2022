@@ -25,6 +25,7 @@ body {
     @extend .h2;
     text-decoration: none;
     color: white;
+    padding: 37px;
     
     &.active {
       background: lighten($color-dark, 75%);
@@ -97,7 +98,21 @@ input, select, textarea{
 
 .inputWrapperInner {
   margin: 0 auto; 
+  margin-top: 70px;
 }
+
+.discoverOutsideWrapper {
+  display: flex;
+}
+
+.discover-wrapper {
+  margin: 0 auto;
+}
+
+.home-wrapper {
+  padding-top: 50px
+}
+
 
 
 
