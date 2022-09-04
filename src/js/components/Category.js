@@ -36,9 +36,7 @@ class Category {
       thisCategory.elements += '<a href="" class="category" attr="' + thisCategory.singleCategories[i] + '"> ' + thisCategory.singleCategories[i] + '</a>';
     }
     wrapper.innerHTML = thisCategory.elements;
-  }
-
-   
+  }  
 }
 
 export default Category; 

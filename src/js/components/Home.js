@@ -52,25 +52,44 @@ export class Home {
   classInvisible(event) {
     const thisHome = this;
     event.preventDefault();
+    const clickedElement = thisHome;
+    thisHome.wasClicked = true;
+    
     const homeWrapper = document.querySelector('.home-wrapper');
     const elements = homeWrapper.querySelectorAll('.audioElement');
     const categoryElements = document.querySelectorAll('.category');
+    if(clickedElement.classList.contains('isClicked')) {
+      clickedElement.classList.remove('isClicked');
+      for(let element of elements) {
+        element.classList.remove('non-visible');
+      }
+      return;
+    } else {
+      clickedElement.classList.add('isClicked');
+      console.log('not clicked before, adding class');
+    }
+
+    console.log('poszło dalej');
     event.target.classList.remove('non-visible');
+    const clickedElementAttribute = clickedElement.getAttribute('attr');
+    thisHome.clickedAttribute = clickedElementAttribute;
     for(let element of elements) {
       element.classList.remove('non-visible');
     }
-    const clickedElement = thisHome;
-    const clickedElementAttribute = clickedElement.getAttribute('attr');
+    
     for(let categoryElement of categoryElements) {
       categoryElement.classList.remove('categoryHighlight');
     }
+  
     clickedElement.classList.add('categoryHighlight');
+   
     for (let element of elements) {
       let attributeArray = element.getAttribute('attr').split(',');
       if(!attributeArray.includes(clickedElementAttribute)) {
         element.classList.add('non-visible');
       }
     }
+    
   }
 
   addListeners() {
