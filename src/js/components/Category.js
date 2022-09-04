@@ -25,7 +25,10 @@ class Category {
   renderOption(data, wrapper) {
     const thisCategory = this; 
     for(let i = 0; i < thisCategory.singleCategories.length; i++) {
-      thisCategory.options += '<option value="'+ thisCategory.singleCategories[i] + '">' + thisCategory.singleCategories[i] + '</option>';
+      if(thisCategory.singleCategories[i] <= thisCategory.singleCategories.length) {
+        thisCategory.options += '<option value="'+ thisCategory.singleCategories[i] + '">' + thisCategory.singleCategories[i] + ',  ' + '</option>';
+      }
+      
     }
     wrapper.innerHTML = thisCategory.elements;
   }
@@ -33,7 +36,11 @@ class Category {
   render(data, wrapper) {
     const thisCategory = this;
     for (let i = 0; i < thisCategory.singleCategories.length; i++) {
-      thisCategory.elements += '<a href="" class="category" attr="' + thisCategory.singleCategories[i] + '"> ' + thisCategory.singleCategories[i] + '</a>';
+      if(thisCategory.singleCategories.length-1 > i) {
+        thisCategory.elements += '<a href="" class="category" attr="' + thisCategory.singleCategories[i] + '"> ' + thisCategory.singleCategories[i] + ',  ' + '</a>';
+      } else {
+        thisCategory.elements += '<a href="" class="category" attr="' + thisCategory.singleCategories[i] + '"> ' + thisCategory.singleCategories[i] + '</a>';
+      }
     }
     wrapper.innerHTML = thisCategory.elements;
   }  

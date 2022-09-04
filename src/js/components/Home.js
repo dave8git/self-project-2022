@@ -59,7 +59,7 @@ export class Home {
     const elements = homeWrapper.querySelectorAll('.audioElement');
     const categoryElements = document.querySelectorAll('.category');
     if(clickedElement.classList.contains('isClicked')) {
-      clickedElement.classList.remove('isClicked');
+      clickedElement.classList.toggle('isClicked');
       for(let element of elements) {
         element.classList.remove('non-visible');
       }
@@ -68,7 +68,6 @@ export class Home {
       clickedElement.classList.add('isClicked');
       console.log('not clicked before, adding class');
     }
-
     console.log('poszło dalej');
     event.target.classList.remove('non-visible');
     const clickedElementAttribute = clickedElement.getAttribute('attr');
@@ -89,7 +88,6 @@ export class Home {
         element.classList.add('non-visible');
       }
     }
-    
   }
 
   addListeners() {
