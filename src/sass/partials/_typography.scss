@@ -6,7 +6,7 @@
 }
 
 .h2 {
-  font-size: 14px;
+  //font-size: 14px;
   font-weight: $font-bold;
   text-transform: uppercase;
 }
@@ -14,5 +14,11 @@
 .h3 {
   font-size: 12px;
   font-weight: $font-bold;
+  text-transform: uppercase;
+}
+
+.linkTypography {
+  font-size: 24px;
+  font-weight: 700;
   text-transform: uppercase;
 }
