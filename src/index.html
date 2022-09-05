@@ -16,9 +16,9 @@
     <div class="header__container">
         <div class="header__titlesubtitle">
           <b class="main-text">TASTE</b>
-          <b>ENGAGE</b>
-          <b>IN</b>
-          <b>ART</b>
+          <b class="subtitleText">ENGAGE</b>
+          <b class="subtitleText">IN</b>
+          <b class="subtitleText">ART</b>
         </div>
         <div class="main-nav">
           <a href="#home">Home</a>
@@ -32,18 +32,24 @@
   <div id="pages">
     <section id="home">
       <div class="home-wrapper container">
-        <div class="categories">
-          <div>Categories</div>
+        <div class="categoriesWrapper">
+          <div class="categories">
+            <div>Categories</div>
+          </div>
         </div>
       </div>
     </section>
     <section id="search1">
       <div class="search-wrapper container">
-        <input type="text" name="song" class="search-song" id="search">
-        <button class="search-button">SEARCH</button>
-        <select id="search" name="song" class="search-option">
-          <option value="Melancholy">Melancholy</option>
-        </select>
+        <div class="inputWrapper">
+          <div class="inputWrapperInner">
+            <input type="text" name="song" class="search-song margin" id="search">
+            <button class="search-button margin" type="submit">SEARCH</button>
+            <select id="search1" name="song" class="search-option margin">
+            <option value="Melancholy">Melancholy</option>
+            </select>
+          </div> 
+        </div>
         <div class="searchPlayers">
         </div>
         <div class="pluginsWrapper">
@@ -51,7 +57,10 @@
       </div>
     </section>
     <section id="discover">
-      <div class="discover-wrapper container"></div>
+      <div class="discoverOutsideWrapper">
+        <div class="discover-wrapper container"></div>
+      </div>
+      
     </section>
   </div>
   <!-- <div id="product-list" class="product-list container"></div> -->
@@ -85,7 +94,7 @@
     </div>
   </script>
   <script id="template-plugin" type="text/x-handlebars-template">
-    <div>
+    <div class="songElementWrapper">
     {{#each songs}} 
     <div class="audioElement" attr="{{categories}}" title="{{title}}">
       <div>{{title}}</div>

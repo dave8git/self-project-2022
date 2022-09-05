@@ -3,7 +3,7 @@ import {select, classNames, settings} from './settings.js';
 import Discover from './components/Discover.js';
 import Home from './components/Home.js';
 import Search from './components/Search.js';
-import Category from './components/Category.js';
+//import Category from './components/Category.js';
 
 Handlebars.registerHelper('concat', function(arr) {
   //arguments = [...arguments].slice(0, -1);

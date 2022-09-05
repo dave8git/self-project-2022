@@ -19,7 +19,7 @@ export class Discover {
     button.addEventListener('click', () => thisDiscover.randomSong()); // funkcja strzałkowa, żeby this wskazywało na instancje
   }
 
-  randomSong(event) {
+  randomSong() {
     const thisDiscover = this; 
     console.log(thisDiscover.data);
     const randomSongNumber = Math.floor(Math.random() * thisDiscover.data.songs.length); 

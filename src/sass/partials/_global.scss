@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -23,11 +24,13 @@ body {
   a {
     @extend .h2;
     text-decoration: none;
+    padding: 50px 57px;
     color: white;
+    font-size: 20px;
     
     &.active {
-      background: lighten($color-dark, 75%);
-      color: pink;
+      //background: lighten($color-dark, 75%);
+      color: rgb(141, 9, 31);
     }
   }
 }
@@ -56,11 +59,78 @@ input, select, textarea{
   color: #ff0000;
   border: orange;
 }
+.categoriesWrapper {
+  display: flex;
+  
+}
 
 #pages > * {
   display: none;
 }
 
 .categories {
+  margin: 0 auto;
   z-index: 20;
+
 }
+
+
+.categoryHighlight {
+  color: red; 
+}
+
+.songElementWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.audioElement {
+  margin: 0 auto;
+}
+
+.category {
+  color: white;
+}
+
+.search-wrapper {
+  width: 100%;
+}
+
+.inputWrapper {
+  display: flex;
+  //flex-direction: column;
+}
+
+.inputWrapperInner {
+  margin: 0 auto; 
+  margin-top: 70px;
+}
+
+.discoverOutsideWrapper {
+  display: flex;
+}
+
+.discover-wrapper {
+  margin: 0 auto;
+}
+
+.home-wrapper {
+  padding-top: 50px
+}
+
+.categoryHighlight {
+  color: red;
+  font-weight: bold;
+}
+
+
+
+// .margin {
+//   margin: 0 auto;
+// }
+// #search1 {
+//   width: 100%;     
+// }
+
+
+
