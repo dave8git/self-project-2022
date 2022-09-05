@@ -72,7 +72,7 @@ textarea {
 }
 
 .categories {
-  margin: 0 auto;
+  //margin: 0 auto;
   z-index: 20;
 
 }
@@ -82,6 +82,9 @@ textarea {
   color: red;
 }
 
+.category {
+  margin-left: 2px;
+}
 .songElementWrapper {
   display: flex;
   flex-direction: column;
@@ -119,6 +122,13 @@ textarea {
 
 .home-wrapper {
   padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoriesWrapper {
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 .categoryHighlight {
@@ -161,6 +171,37 @@ textarea {
   border-radius: 8px;
 }
 
+input[type=text] {
+  //width: 100%;
+  background-color: white;
+  border-color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  margin-right: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: black;
+  z-index: 24;
+}
+
+input[type=text]:focus{
+  border: none;
+  border-color: transparent;
+  outline: none;
+}
+
+.inputWrapperInner span {
+  font-size: 20px;
+  //z-index: 24;
+  color: grey;
+  font-weight: bold;
+  margin-right: 10px;
+ 
+}
+
+.whiteComma {
+  color: white;
+}
 // .margin {
 //   margin: 0 auto;
 // }

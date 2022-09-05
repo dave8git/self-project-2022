@@ -26,7 +26,7 @@ class Category {
     const thisCategory = this; 
     for(let i = 0; i < thisCategory.singleCategories.length; i++) {
       if(thisCategory.singleCategories[i] <= thisCategory.singleCategories.length) {
-        thisCategory.options += '<option value="'+ thisCategory.singleCategories[i] + '">' + thisCategory.singleCategories[i] + ',  ' + '</option>';
+        thisCategory.options += '<option value="'+ thisCategory.singleCategories[i] + '">' + thisCategory.singleCategories[i] + '<span class="whiteComma">,  <span>' + '</option>';
       }
       
     }
@@ -37,7 +37,7 @@ class Category {
     const thisCategory = this;
     for (let i = 0; i < thisCategory.singleCategories.length; i++) {
       if(thisCategory.singleCategories.length-1 > i) {
-        thisCategory.elements += '<a href="" class="category" attr="' + thisCategory.singleCategories[i] + '"> ' + thisCategory.singleCategories[i] + ',  ' + '</a>';
+        thisCategory.elements += '<a href="" class="category" attr="' + thisCategory.singleCategories[i] + '">' + thisCategory.singleCategories[i] + '<span class="whiteComma">,  <span>' + '</a>';
       } else {
         thisCategory.elements += '<a href="" class="category" attr="' + thisCategory.singleCategories[i] + '"> ' + thisCategory.singleCategories[i] + '</a>';
       }
