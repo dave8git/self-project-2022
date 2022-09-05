@@ -27,7 +27,7 @@ body {
     padding: 50px 57px;
     color: white;
     font-size: 20px;
-    
+
     &.active {
       //background: lighten($color-dark, 75%);
       color: rgb(141, 9, 31);
@@ -54,17 +54,20 @@ div[class*="wrapper"] {
   background-color: black;
 }
 
-input, select, textarea{
+input,
+select,
+textarea {
   background-color: black;
   color: #ff0000;
   border: orange;
 }
+
 .categoriesWrapper {
   display: flex;
-  
+
 }
 
-#pages > * {
+#pages>* {
   display: none;
 }
 
@@ -76,7 +79,7 @@ input, select, textarea{
 
 
 .categoryHighlight {
-  color: red; 
+  color: red;
 }
 
 .songElementWrapper {
@@ -102,7 +105,7 @@ input, select, textarea{
 }
 
 .inputWrapperInner {
-  margin: 0 auto; 
+  margin: 0 auto;
   margin-top: 70px;
 }
 
@@ -115,7 +118,7 @@ input, select, textarea{
 }
 
 .home-wrapper {
-  padding-top: 50px
+  padding-top: 50px;
 }
 
 .categoryHighlight {
@@ -123,14 +126,9 @@ input, select, textarea{
   font-weight: bold;
 }
 
-
-
 // .margin {
 //   margin: 0 auto;
 // }
 // #search1 {
 //   width: 100%;     
 // }
-
-
-
