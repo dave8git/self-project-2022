@@ -202,6 +202,37 @@ input[type=text]:focus{
 .whiteComma {
   color: white;
 }
+
+select {
+  background-color: white;
+  border-color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  margin-right: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: black;
+  z-index: 24;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../../../Iconsmind-Outline-Music-Note.ico) 96% / 15% no-repeat #EEE; //url(https://stackoverflow.com/favicon.ico) 96% / 15% no-repeat #EEE;
+}
+  
+select:focus {
+  border: none;
+  border-color: transparent;
+  outline: none;
+}
+
+.button-wrapper {
+  display: flex;
+}
+
+.button-wrapper button {
+  margin: 0 auto;
+}
+
 // .margin {
 //   margin: 0 auto;
 // }
