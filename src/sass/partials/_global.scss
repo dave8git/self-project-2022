@@ -37,8 +37,8 @@ body {
 
 div[class*="wrapper"] {
   background-color: black;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
 }
 
 .non-visible {
@@ -85,9 +85,11 @@ textarea {
 .category {
   margin-left: 2px;
 }
+
 .songElementWrapper {
   display: flex;
   flex-direction: column;
+  padding-bottom: 60px;
 }
 
 .audioElement {
@@ -231,8 +233,75 @@ select:focus {
 
 .button-wrapper button {
   margin: 0 auto;
+  margin-top: 20px;
 }
 
+.footerContent {
+  margin: 0 auto;
+}
+
+.discoverTitle {
+  font-size: 24px;
+  padding-top: 24px;
+}
+
+.discoverOutsideWrapper {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  //text-align: center;
+  padding-bottom: 50px;
+}
+
+.pluginsWrapper {
+  margin: 0 auto;
+  
+}
+
+.discoverTextElements {
+  text-align: center;
+}
+
+.discover-text {
+  padding: 30px;
+  display: block;
+  padding-top: 20px;
+  color: white;
+  
+}
+
+ul {
+  list-style: none;
+}
+
+.joinList {
+  position: relative;
+}
+
+.underPictureText {
+  position: absolute;
+
+  top: 100px;
+}
+// .button-discover {
+//   background-color: #4CAF50; /* Green */
+//   border: none;
+//   color: white;
+//   padding: 15px 32px;
+//   //text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+//   border-radius: 8px;
+// }
+
+.discoverOutsideWrapper {
+  display: flex;
+}
+
+.discover-wrapper {
+  margin: 0 auto;
+}
 // .margin {
 //   margin: 0 auto;
 // }

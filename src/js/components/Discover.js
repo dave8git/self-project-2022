@@ -15,12 +15,15 @@ export class Discover {
 
   initElements() {
     const thisDiscover = this;
-    const button = document.querySelector('.button-discover');
-    button.addEventListener('click', () => thisDiscover.randomSong()); // funkcja strzałkowa, żeby this wskazywało na instancje
+    const button = document.querySelector('.discover-text');
+    button.addEventListener('click', function (event)  {
+      thisDiscover.randomSong(event); // funkcja strzałkowa, żeby this wskazywało na instancje
+    });
   }
 
-  randomSong() {
+  randomSong(event) {
     const thisDiscover = this; 
+    event.preventDefault();
     console.log(thisDiscover.data);
     const randomSongNumber = Math.floor(Math.random() * thisDiscover.data.songs.length); 
     const randomSong = thisDiscover.data.songs[randomSongNumber];
