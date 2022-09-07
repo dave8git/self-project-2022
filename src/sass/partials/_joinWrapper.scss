@@ -43,8 +43,9 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 42%;
+  left: 32%;
+  //transform: translateY(-50%);
   color: white;
   font-size: 35px;
   line-height: 35px;
@@ -98,12 +99,17 @@
   top: -115px;
 }
 
-.join__button-content::after {
+.join__artistName::after {
   position: absolute;
   display: inline-block;
   content: "NEW ALBUM";
   font-size: 12px;
-  top: 100px;
-  margin-left: 300px;
+  top: 123px;
+  margin-left: -100px;
+  margin-right: -48px;
+  right: -73px;
   display: block;
+  z-index: 24;
 }
+
+
