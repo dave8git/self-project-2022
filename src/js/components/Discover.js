@@ -1,4 +1,4 @@
-/* global GreenAudioPlayer */
+/* global GreenAudioPlayer, app */
 
 import { select, templates } from '../settings.js';
 import utils from '../utils.js';
@@ -10,7 +10,6 @@ export class Discover {
     thisDiscover.render();
     thisDiscover.data = data;
     thisDiscover.initElements(); 
-    console.log(thisDiscover.data);
   }
 
   initElements() {
@@ -24,11 +23,42 @@ export class Discover {
   randomSong(event) {
     const thisDiscover = this; 
     event.preventDefault();
-    console.log(thisDiscover.data);
-    const randomSongNumber = Math.floor(Math.random() * thisDiscover.data.songs.length); 
-    const randomSong = thisDiscover.data.songs[randomSongNumber];
-    thisDiscover.renderSong(randomSong); 
-    console.log('randomSong', randomSong);
+    if(Object.keys(app.stats).length) {
+      let max = 0;
+      let songName = '';
+      for (let song in app.stats) {
+        if(app.stats[song] > max) {
+          max = app.stats[song];
+          songName = song;
+        }
+      }
+      
+      const mostPlayedSong = thisDiscover.data.songs.find(song => {
+        if(songName.includes(song.filename)) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      const similarSong = thisDiscover.data.songs.find(song => {
+        if(song.filename != mostPlayedSong.filename) {
+          for(let category of mostPlayedSong.categories) {
+            if(song.categories.includes(category)) {
+              return true;
+            } 
+          }
+        } else {
+          return false; 
+        }
+      });
+      thisDiscover.renderSong(similarSong); 
+    } else {
+      const randomSongNumber = Math.floor(Math.random() * thisDiscover.data.songs.length); 
+      const randomSong = thisDiscover.data.songs[randomSongNumber];
+      thisDiscover.renderSong(randomSong); 
+    }
+   
+    //console.log('randomSong', randomSong);
   }
   
   

@@ -68,30 +68,30 @@ const app = {
     setTimeout(() => {
       const homeWrapper = document.querySelector('.home-wrapper');
       let audioData = homeWrapper.querySelectorAll('audio');
-      console.log(audioData);
       // for (let i = 0; i < audioData.length; i++) {
       //   console.log('działą');
       // }
-      homeWrapper.addEventListener('play', function () {
-        console.log('PLAY DZIAŁĄ');
-      });
-      audioData.forEach(audio => {  console.log(audio); 
+      audioData.forEach(audio => {  
         audio.addEventListener('play', (event) => {
-          console.log('działa play');
           thisApp.collectData(event); 
-          console.log('event.target.source', event.target.source);
+          const source = event.target.querySelector('source');
+          const sourceAttribute = source.getAttribute('src');
+          if(thisApp.stats[sourceAttribute]) {
+            thisApp.stats[sourceAttribute]++;
+          } else {
+            thisApp.stats[sourceAttribute] = 1; 
+          }
         });});
     }, 0);
   },
   
-  collectData(event) {
-    console.log(event.target);
-    //thisApp.collectData(event, )
-  },
+  // collectData(event) {
+  //   console.log(event.target);
+  //   //thisApp.collectData(event, )
+  // },
   initDiscover() {
     const thisApp = this;
     //const homeSiteElem = document.querySelector(select.containerOf.home);
-    console.log('!', thisApp.data);
     thisApp.discover = new Discover(thisApp.data);
   },
 
@@ -151,5 +151,5 @@ const app = {
     thisApp.stats = {};
   },
 };
-
+window.app = app;
 app.init();

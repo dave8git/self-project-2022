@@ -10,7 +10,7 @@ export class Search{
     thisSearch.singleCategories = [];
     const pluginWrapper1 = document.querySelector('.pluginsWrapper');
     const optionWrapper = document.querySelector('.search-option');
-    console.log('optionWrapper', optionWrapper);
+    //console.log('optionWrapper', optionWrapper);
     new Plugin(data, pluginWrapper1);
     //console.log(data);
     //thisSearch.search();
@@ -92,14 +92,11 @@ export class Search{
 
   renderOption(data, wrapper) {
     const thisSearch = this; 
-    console.log('thisSearch.singleCategories', thisSearch.singleCategories);
     thisSearch.options = '<option selected value> -- select an option -- </option>';
     for(let i = 0; i < thisSearch.singleCategories.length; i++) {
       thisSearch.options += '<option value="'+ thisSearch.singleCategories[i] + '">' + thisSearch.singleCategories[i] + '</option>';
 
     }
-    console.log('wrapper', wrapper);
-    console.log('thisSearch', thisSearch.element);
     wrapper.innerHTML = thisSearch.options;
   }
 
@@ -121,7 +118,6 @@ export class Search{
   addListeners() {
     const thisSearch = this;
     const searchWrapper = document.querySelector('.search-wrapper');
-    console.log(searchWrapper);
     const categoryElements = searchWrapper.querySelectorAll('.category');
     categoryElements.forEach(categoryElement => { 
       categoryElement.addEventListener('click', thisSearch.classInvisible);
@@ -135,14 +131,12 @@ export class Search{
   }
 
   classInvisible(event) {
-    console.log('kategoria kliknięta');
     const thisSearch = this;
     event.preventDefault();
     const searchWrapper = document.querySelector('.search-wrapper');
     const elements = searchWrapper.querySelectorAll('.audioElement');
     for(let element of elements) {
       element.classList.remove('non-visible');
-      console.log('classList.remove');
     }
     event.target.classList.remove('non-visible');
     const clickedElement = thisSearch;
